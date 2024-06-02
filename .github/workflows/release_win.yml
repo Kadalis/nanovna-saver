@@ -36,6 +36,7 @@ jobs:
       run: |
         .\venv\Scripts\activate
         python3 setup.py -V
+        ls -laR build
         pyinstaller --onefile --noconsole -i icon_48x48.ico -p src --add-data "build/lib/python3.11/site-packages/PyQt6/sip.*.dll:PyQt6/sip.dll" --add-data "build/lib/python3.11/site-packages/PyQt6/Qt6:PyQt6/Qt6" -n nanovna-saver.exe nanovna-saver.py
     - name: Archive production artifacts
       uses: actions/upload-artifact@v1
